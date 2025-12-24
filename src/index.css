@@ -1,0 +1,280 @@
+/* ===== Root Theme ===== */
+:root {
+  --primary: #6366f1;
+  --secondary: #22c55e;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --bg: #f4f7ff;
+  --glass: rgba(255, 255, 255, 0.75);
+}
+
+/* ===== Global ===== */
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #eef2ff, #f8fafc);
+  color: #1f2937;
+}
+
+h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 30px 0;
+  color: #111827;
+}
+
+/* ===== Form Card ===== */
+form {
+  max-width: 950px;
+  margin: 0 auto 40px;
+  padding: 25px;
+  border-radius: 18px;
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+/* Inputs */
+form input,
+form select {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  background: #fff;
+  transition: all 0.25s ease;
+}
+
+form input:focus,
+form select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* Add / Update Button */
+form button {
+  grid-column: span 2;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+}
+
+/* ===== Table Card ===== */
+table {
+  width: 92%;
+  margin: 0 auto 60px;
+  border-collapse: collapse;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+thead {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+}
+
+th {
+  padding: 16px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Rows */
+td {
+  padding: 14px;
+  text-align: center;
+  font-size: 14px;
+}
+
+tbody tr {
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+tbody tr:hover {
+  background: rgba(99, 102, 241, 0.08);
+  transform: scale(1.01);
+}
+
+/* ===== Status Badges ===== */
+td:nth-child(3) {
+  font-weight: 600;
+}
+
+td:nth-child(3):contains("Active") {
+  color: var(--secondary);
+}
+
+td:nth-child(3):contains("Inactive") {
+  color: var(--danger);
+}
+
+td:nth-child(3):contains("Under Maintenance") {
+  color: var(--warning);
+}
+
+/* ===== Action Buttons ===== */
+td button {
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+td button:first-child {
+  background: #22c55e;
+  color: white;
+  margin-right: 8px;
+}
+
+td button:first-child:hover {
+  background: #16a34a;
+}
+
+td button:last-child {
+  background: #ef4444;
+  color: white;
+}
+
+td button:last-child:hover {
+  background: #dc2626;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 22px;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  form button {
+    grid-column: span 1;
+  }
+
+  table {
+    width: 100%;
+    font-size: 12px;
+  }
+}
+
+/* Container */
+.app-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* Title */
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Controls (Search + Sort) */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: flex-end;
+}
+
+/* Search input */
+.search-input {
+  padding: 10px;
+  width: 250px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.2s;
+}
+
+.search-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0,123,255,0.3);
+}
+
+/* Sort select */
+.sort-select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+/* Sort button */
+.sort-button {
+  padding: 10px 15px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.sort-button:hover {
+  background: #0056b3;
+}
+
+.equipment-table {
+  width: 100%;
+  table-layout: fixed; /* 🔥 PREVENT TABLE RESIZE */
+  border-collapse: collapse;
+}
+
+.equipment-table th,
+.equipment-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+/* ✅ Name column styling */
+.name-column {
+  max-width: 220px;      /* adjust if needed */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* Responsive Table Cards */
+@media (max-width: 768px) {
+  .controls {
+    justify-content: center;
+  }
+}
