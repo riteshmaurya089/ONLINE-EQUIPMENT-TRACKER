@@ -43,9 +43,12 @@ function App() {
   );
 
   const loadData = async () => {
-    const res = await fetchEquipment();
-    setEquipment(res.data);
-  };
+  const res = await fetchEquipment();
+
+  // ✅ SAFE FIX (array guarantee)
+  setEquipment(Array.isArray(res.data) ? res.data : res.data?.data || []);
+};
+
 
   useEffect(() => {
     loadData();
