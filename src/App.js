@@ -71,7 +71,10 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1 className="title">Equipment Tracker</h1>
+      <h1 className="title">
+  ⚙️ <span>Equipment</span> <strong>Tracker</strong> <span>Dashboard</span>
+</h1>
+
 
      
 

@@ -271,6 +271,20 @@ td button:last-child:hover {
   text-overflow: ellipsis;
 }
 
+.title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.title span {
+  color: #3498db;
+}
+
+.title strong {
+  color: #1abc9c;
+}
 
 /* Responsive Table Cards */
 @media (max-width: 768px) {
